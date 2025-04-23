@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>webchef.py</title>
+    <style>
+      body {
+        background-color: #333; /* Dark background */
+        color: #eee; /* Light text */
+        font-family: sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #444;
+        border-radius: 8px;
+      }
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+      }
+      h2 {
+        font-size: 1.8em;
+        margin-top: 20px;
+      }
+      p {
+        font-size: 1.1em;
+        line-height: 1.6;
+      }
+      .emoji {
+        font-size: 2em;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+      pre {
+        /* Style for the code blocks */
+        background-color: #555;
+        color: #ddd;
+        padding: 10px; /* Increased padding for more visual space */
+        border-radius: 5px; /* Slightly rounded corners for a softer look */
+        font-family: monospace;
+        overflow-x: auto; /* Enable horizontal scrolling for long code lines */
+        border: 1px solid #777; /* Add a subtle border */
+      }
+      code {
+        font-size: 0.9em; /* Slightly smaller font size inside the code block */
+      }
+      ul {
+        list-style-type: square;
+        padding-left: 20px;
+      }
+      a {
+        color: #bbb;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1><span class="emoji">👨‍🍳</span> webchef.py</h1>
+      <p>
+        Webchef is a simple, lightweight HTTP server, baked in Python. It's
+        designed for easy preparation and serving, allowing you to quickly plate
+        static files from your local station.
+      </p>
+
+      <h2>Signature Dishes (Key Features)</h2>
+      <ul>
+        <li><strong>Quick Prep:</strong> Just fire up the Python script!</li>
+        <li>
+          <strong>Clean Plates (URLs):</strong> Serves dishes without the
+          <code>.html</code> garnish.
+        </li>
+        <li>
+          <strong>Custom Seasoning:</strong> Configure the server via a
+          <code>webchef.config</code> recipe file.
+        </li>
+        <li>
+          <strong>"Dish Not Found" Special (404 Page):</strong> Includes a
+          dedicated "Dish Not Found" presentation
+          (<code>webchef.404.html</code>).
+        </li>
+        <li>
+          <strong>Quiet Kitchen:</strong> Keeps console chatter to a minimum.
+        </li>
+      </ul>
+
+      <h2>Recipe Adjustment (<code>webchef.config</code>)</h2>
+      <p>
+        The recipe file allows you to customize the server's ingredients and
+        method:
+      </p>
+      <pre><code>
+        {
+            "kitchen_address": "0.0.0.0",     // The address where the Chef listens for orders (all interfaces)
+            "oven_port": 8080,                // A different port for this custom setup
+            "menu_directory": "special_menu", // Serve dishes from this specific folder
+            "log_level": 30                   // Only show warnings and above (30 is logging.WARNING)
+        }
+        </code></pre>
+
+      <h2>"Dish Not Found" Presentation (<code>webchef.404.html</code>)</h2>
+      <p>
+        If an ingredient is missing, Webchef serves this special presentation:
+      </p>
+      <pre><code>
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang="en"&gt;
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;Dish Not Found :(&lt;/title&gt;
+            &lt;style&gt; /* ... (CSS for the dark mode page) ... */ &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;div class="container"&gt;
+                &lt;h1&gt;&lt;span class="emoji"&gt;👨‍🍳&lt;/span&gt; &lt;strong&gt;Dish Not Found :(&lt;/strong&gt;&lt;/h1&gt;
+                &lt;p&gt;The Chef couldn't find what you ordered.&lt;/p&gt;
+                &lt;p&gt;&lt;a href="/"&gt;Back to the Kitchen&lt;/a&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+        </code></pre>
+
+      <h2>Serving Instructions</h2>
+      <ol>
+        <li>
+          Procure the latest batch of
+          <a href="https://github.com/mmmarco-de/webchef.py/releases/"
+            >webchef.py</a
+          >
+          in your preferred flavor (language).
+        </li>
+        <li>Unpack it into your project's pantry.</li>
+        <li>Adjust the recipe to your liking.</li>
+        <li>Fire up the script: <code>python webchef.py</code></li>
+        <li>
+          Your dishes are ready at
+          <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> (or the
+          address and table number (port) specified in your recipe).
+        </li>
+      </ol>
+
+      <p>
+        Enjoy plating your web creations with your friendly neighborhood Web
+      </p>
+    </div>
+  </body>
+</html>

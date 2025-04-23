@@ -1,4 +1,3 @@
-<!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/mmmarco-de/webchef.py">
@@ -8,51 +7,50 @@
   <h3 align="center">webchef.py</h3>
 
   <p align="center">
-    Your friendly neighborhood Python web server.
+    Your friendly neighborhood Python web server, ready to serve! 🍽️
     <br />
-    <a href="#"><strong>Explore the docs (soon) »</strong></a>
+    <a href="https://webchef.mmmarco.de/"><strong>Explore the full menu »</strong></a>
   </p>
 </div>
 
-## About The Project
-There are some simple web servers for just testing when creating websites with HTML and CSS. But I had the feeling that they weren't so user friendly like this one. So I fixed it and tested something called: vibe-coding.
+## About the Kitchen
+There are some simple web servers out there, like basic kitchen appliances, just for tasting your website creations with HTML and CSS. But I felt they weren't as user-friendly as this recipe. So, I've refined it and experimented.
 
-Of course, this one isn't the best. But I'm just trying. There is Live Server for VS Code. But if you don't use VS Code, you simply don't have it.
+Of course, this isn't the finest dining experience yet. But I'm just trying out new techniques. There's Live Server for VS Code, a handy kitchen gadget. But if you don't use VS Code, you simply don't have access to it.
 
+## Gathering Your Ingredients
+Simply procure the 3 key ingredients (files) and place them in your project's pantry. If you wish, you can adjust the seasoning in the `webchef.config` recipe file.
 
-## Getting Started
-Simply just copy the 3 files and paste them into the folder of your project. If you want you can change some things in the webchef.config file.
+## Serving Instructions
+Just open your console or shell, your command-line kitchen, and use `python3 webchef.py`.
 
-## Usage
-Just open a console or shell and use `python3 webchef.py`.
+After that, head to `127.0.0.1:8000` on your browser of choice, on the same device where your kitchen is set up.
 
-After that go to 127.0.0.1:8000 on your browser of your choice on the same device.
+_For more serving suggestions, please refer to the [Full Menu](https://webchef.mmmarco.de/)_
 
-_For more examples, please refer to the [Documentation (soon)](#)_
-
-## Roadmap
+## Recipe Development
 - [ ] Add Changelog
-- [ ] Change error page
-- [ ] More languages
+- [ ] Refine the "Dish Not Found" presentation
+- [ ] More flavor options
 
-See the [open issues](https://github.com/mmmarco-de/webchef.py/issues) for a full list of proposed features (and known issues).
+See the [open orders](https://github.com/mmmarco-de/webchef.py/issues) for a full list of proposed features (and known issues).
 
-## Contributing
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+## Contributing Your Culinary Expertise
+Contributions are what make the open-source culinary community such an amazing place to learn, inspire, and create new dishes. Any contributions you bring to the table are **greatly appreciated**.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+If you have a suggestion that would enhance this recipe, please fork the repo and create a pull request. You can also simply open an issue with the "enhancement" tag.
+Don't forget to give the project a star – a chef's kiss! Thanks again!
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Fork the Kitchen
+2. Create your Feature Branch (`git checkout -b feature/AmazingDish`)
+3. Commit your Changes (`git commit -m 'Add some AmazingDish'`)
+4. Push to the Branch (`git push origin feature/AmazingDish`)
+5. Open a Pull Request (Submit your Recipe)
 
 ## License
 Distributed under the Unlicense License. See `LICENSE` for more information.
 
-## Project Metadata
-Project: webchef.py
-Author: Marco (marco@mmmarco.de)
+## Kitchen Metadata
+Kitchen: webchef.py
+Chef: Marco (marco@mmmarco.de)
 License: Unlicense

@@ -18,6 +18,7 @@ DEFAULT_RECIPE = {
     "menu_directory": ".",           # Where the Chef keeps the menu
     "log_level": logging.ERROR       # How much noise from the kitchen
 }
+# To change your configuration use the webchef.config file.
 
 # --- Custom Recipe Location ---
 CUSTOM_RECIPE_FILE = "webchef.config"
