@@ -51,6 +51,6 @@ Don't forget to give the project a star – a chef's kiss! Thanks again!
 Distributed under the Unlicense License. See `LICENSE` for more information.
 
 ## Kitchen Metadata
-Kitchen: webchef.py
-Chef: Marco (marco@mmmarco.de)
+Kitchen: webchef.py\
+Chef: Marco (marco@mmmarco.de)\
 License: Unlicense
