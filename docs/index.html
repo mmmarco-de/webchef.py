@@ -75,8 +75,7 @@
           <code>.html</code> garnish.
         </li>
         <li>
-          <strong>Custom Seasoning:</strong> Configure the server via a
-          <code>webchef.config</code> recipe file.
+          <strong>Custom Seasoning:</strong> Configure the server directly in the script and recipe file.
         </li>
         <li>
           <strong>"Dish Not Found" Special (404 Page):</strong> Includes a
@@ -95,10 +94,10 @@
       </p>
       <pre><code>
         {
-            "kitchen_address": "0.0.0.0",     // The address where the Chef listens for orders (all interfaces)
-            "oven_port": 8080,                // A different port for this custom setup
-            "menu_directory": "special_menu", // Serve dishes from this specific folder
-            "log_level": 30                   // Only show warnings and above (30 is logging.WARNING)
+            "kitchen_address": "127.0.0.1",  // The address where the Chef listens for orders (all interfaces)
+            "oven_port": 8000,               // A different port for this custom setup
+            "menu_directory": ".",           // Serve dishes from this specific folder
+            "log_level": 30                  // Only show warnings and above (30 is logging.WARNING)
         }
         </code></pre>
 
@@ -131,11 +130,12 @@
           Procure the latest batch of
           <a href="https://github.com/mmmarco-de/webchef.py/releases/"
             >webchef.py</a
-          >
-          in your preferred flavor (language).
+          >.
         </li>
         <li>Unpack it into your project's pantry.</li>
-        <li>Adjust the recipe to your liking.</li>
+        <li>
+          Adjust the recipe to your liking somewhere at the start of the file.
+        </li>
         <li>Fire up the script: <code>python webchef.py</code></li>
         <li>
           Your dishes are ready at
@@ -145,7 +145,13 @@
       </ol>
 
       <p>
-        Enjoy plating your web creations with your friendly neighborhood Web
+        Enjoy plating your web creations with your friendly neighborhood
+        Webchef!
+      </p>
+      <p>
+        Prepared with passion by
+        <a href="https://mmmarco.de">Marco's Kitchen</a> | Check out the recipe
+        on <a href="https://github.com/mmmarco-de/webchef.py">GitHub</a>.
       </p>
     </div>
   </body>
