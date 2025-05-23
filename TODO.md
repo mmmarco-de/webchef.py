@@ -1,3 +1,5 @@
 # TODO
-- [ ] Change docs
-- [ ] Change readme
+
+- [x] Change docs
+- [x] Change readme
+- [ ] Republish with new style
