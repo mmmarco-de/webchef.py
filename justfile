@@ -4,6 +4,7 @@ default:
 build:
     zip -r webchef-script.zip webchef-script
     mv webchef-script.zip archive/builds/build-$(date +%Y%m%d%H%M%S).zip
+    just push
 
 format:
     prettier --write .
