@@ -2,8 +2,12 @@ default:
     @just --dump
 
 build:
-    zip -r webchef-script.zip webchef-script
-    mv webchef-script.zip archive/builds/build-$(date +%Y-%m-%d_%H-%M-%S).zip
+    zip -r build.zip webchef-v2
+    mv build.zip builds/build-$(date +%Y-%m-%d_%H-%M-%S).zip
+
+_build-legacy:
+    zip -r build-legacy.zip webchef-v1
+    mv build-legacy.zip archive/builds/build-$(date +%Y-%m-%d_%H-%M-%S).zip
 
 format:
     prettier --write .
