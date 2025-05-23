@@ -1,0 +1,7 @@
+default:
+    @just --list
+
+serve:
+    @echo "*** Serving"
+    python3 webchef.py
+    @echo "*** Serving done!"
