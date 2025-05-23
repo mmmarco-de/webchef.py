@@ -88,10 +88,10 @@
         </li>
       </ul>
 
-      <h2>Recipe Adjustment (<code>webchef.config</code>)</h2>
+      <h2>Recipe Adjustment</h2>
       <p>
-        The recipe file allows you to customize the server's ingredients and
-        method:
+        The python file includes the recipe, which allows you to customize the server's ingredients and
+        method, and you can find it somewhere near the top of the file:
       </p>
       <pre><code>
         {
@@ -104,26 +104,8 @@
 
       <h2>"Dish Not Found" Presentation (<code>webchef.404.html</code>)</h2>
       <p>
-        If an ingredient is missing, Webchef serves this special presentation:
+        If an ingredient is missing, Webchef serves this special presentation.
       </p>
-      <pre><code>
-        &lt;!DOCTYPE html&gt;
-        &lt;html lang="en"&gt;
-        &lt;head&gt;
-            &lt;meta charset="UTF-8"&gt;
-            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-            &lt;title&gt;Dish Not Found :(&lt;/title&gt;
-            &lt;style&gt; /* ... (CSS for the dark mode page) ... */ &lt;/style&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-            &lt;div class="container"&gt;
-                &lt;h1&gt;&lt;span class="emoji"&gt;👨‍🍳&lt;/span&gt; &lt;strong&gt;Dish Not Found :(&lt;/strong&gt;&lt;/h1&gt;
-                &lt;p&gt;The Chef couldn't find what you ordered.&lt;/p&gt;
-                &lt;p&gt;&lt;a href="/"&gt;Back to the Kitchen&lt;/a&gt;&lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/body&gt;
-        &lt;/html&gt;
-        </code></pre>
 
       <h2>Serving Instructions</h2>
       <ol>
@@ -137,7 +119,7 @@
         <li>
           Adjust the recipe to your liking somewhere at the start of the file.
         </li>
-        <li>Fire up the script: <code>python webchef.py</code></li>
+        <li>Fire up the script: <code>python3 webchef.py</code></li>
         <li>
           Your dishes are ready at
           <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> (or the

@@ -21,7 +21,7 @@ Of course, this isn't the finest dining experience yet. But I'm just trying out 
 
 ## Gathering Your Ingredients
 
-Simply procure the 3 key ingredients (files) and place them in your project's pantry. If you wish, you can adjust the seasoning in the `webchef.config` recipe file.
+Simply procure the 2 key ingredients (files) and place them in your project's pantry. If you wish, you can adjust the seasoning in the recipe file somewhere near the top of the file.
 
 ## Serving Instructions
 
@@ -32,10 +32,6 @@ After that, head to `127.0.0.1:8000` on your browser of choice, on the same devi
 _For more serving suggestions, please refer to the [Full Menu](https://webchef.mmmarco.de/)_
 
 ## Recipe Development
-
-- [ ] Add Changelog
-- [ ] Refine the "Dish Not Found" presentation
-- [ ] More flavor options
 
 See the [open orders](https://github.com/mmmarco-de/webchef.py/issues) for a full list of proposed features (and known issues).
 
