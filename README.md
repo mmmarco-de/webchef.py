@@ -1,4 +1,4 @@
-# 🧑‍🍳 webchef.py: Your Local Kitchen for Web Serving! 🍽️
+# 🧑‍🍳 webchef.py
 
 Welcome to **webchef.py** – a deliciously simple and lightweight HTTP server written in Python! It's designed to help you quickly serve local files from any directory, perfect for testing web projects, sharing documents, or just getting a taste of how web servers work.
 
