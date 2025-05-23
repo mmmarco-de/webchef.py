@@ -3,140 +3,413 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>webchef.py</title>
+    <title>webchef.py - Your Local Kitchen for Web Serving!</title>
     <style>
+      /* Chosen Palette: Dark Grey Harmony */
+      /* Application Structure Plan: This SPA is structured linearly, mirroring the logical flow of a README, but presented as a modern, single-page website. It starts with an engaging hero section, followed by distinct sections for features, getting started (prerequisites, installation), and how to use (server operation, auto-indexing, stopping). This structure maintains clarity for instructional content, making it easy for users to follow the setup and usage instructions without complex navigation. Key interactions are primarily scrolling and clicking external links. */
+      /* Visualization & Content Choices: The content is largely textual, explaining a command-line tool.
+           - Goal: Inform/Explain. Viz/Presentation Method: Headings, bulleted lists, and explanatory paragraphs. Emojis are used for visual appeal and thematic consistency.
+           - Interaction: Standard web scrolling and external link navigation.
+           - Justification: The nature of the content (installation guide, feature list) is best conveyed through clear, well-formatted text.
+           - Library/Method: HTML, CSS (Vanilla), Unicode emojis.
+           - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. */
+
       body {
         background-color: #333; /* Dark background */
         color: #eee; /* Light text */
-        font-family: sans-serif;
+        font-family: "Inter", sans-serif; /* Using Inter font */
+        line-height: 1.6;
         margin: 0;
-        padding: 20px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        box-sizing: border-box; /* Include padding in element's total width and height */
       }
       .container {
         max-width: 800px;
-        margin: 20px auto;
-        padding: 20px;
-        background-color: #444;
-        border-radius: 8px;
+        width: 100%;
+        padding: 2rem;
+        margin: 2rem 0;
+        background-color: #444; /* Slightly lighter dark background for content area */
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        box-sizing: border-box;
+      }
+
+      /* Responsive padding for container */
+      @media (max-width: 640px) {
+        body {
+          padding: 1rem;
+        }
+        .container {
+          margin: 1rem 0;
+          padding: 1.5rem;
+        }
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: #90caf9; /* Light blue for headings */
+        margin-bottom: 1rem;
+        font-weight: 700;
       }
       h1 {
-        font-size: 2.5em;
-        margin-bottom: 10px;
+        font-size: 2.5rem;
+        text-align: center;
+        border-bottom: 2px solid #90caf9;
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
       }
       h2 {
-        font-size: 1.8em;
-        margin-top: 20px;
+        font-size: 2rem;
+        margin-top: 2.5rem;
+        border-bottom: 1px solid #555;
+        padding-bottom: 0.5rem;
+      }
+      h3 {
+        font-size: 1.5rem;
+        margin-top: 2rem;
       }
       p {
-        font-size: 1.1em;
-        line-height: 1.6;
-      }
-      .emoji {
-        font-size: 2em;
-        margin-right: 10px;
-        vertical-align: middle;
-      }
-      pre {
-        /* Style for the code blocks */
-        background-color: #555;
-        color: #ddd;
-        padding: 10px; /* Increased padding for more visual space */
-        border-radius: 5px; /* Slightly rounded corners for a softer look */
-        font-family: monospace;
-        overflow-x: auto; /* Enable horizontal scrolling for long code lines */
-        border: 1px solid #777; /* Add a subtle border */
-      }
-      code {
-        font-size: 0.9em; /* Slightly smaller font size inside the code block */
+        margin-bottom: 1rem;
       }
       ul {
-        list-style-type: square;
-        padding-left: 20px;
+        list-style-type: none;
+        padding-left: 0;
+        margin-bottom: 1rem;
+      }
+      ul li {
+        margin-bottom: 0.5rem;
+        padding-left: 1.5rem;
+        position: relative;
+      }
+      ul li::before {
+        content: "•";
+        color: #90caf9; /* Light blue bullet */
+        position: absolute;
+        left: 0;
       }
       a {
-        color: #bbb;
+        color: #bbb; /* Lighter grey for links */
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      a:hover {
+        color: #fff; /* White on hover */
+        text-decoration: underline;
+      }
+      code {
+        background-color: #555;
+        padding: 0.2em 0.4em;
+        border-radius: 4px;
+        font-family: "Fira Code", "Cascadia Code", "Consolas", monospace;
+        font-size: 0.9em;
+      }
+      pre {
+        background-color: #222;
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+      pre code {
+        background-color: transparent;
+        padding: 0;
+        font-size: 1em;
+        color: #eee;
+        white-space: pre-wrap; /* Allows long lines to wrap */
+        word-break: break-all; /* Breaks words if they are too long */
+      }
+      hr {
+        border: none;
+        border-top: 1px solid #555;
+        margin: 2rem 0;
+      }
+      .emoji {
+        font-size: 1.2em;
+        margin-right: 0.5rem;
+        vertical-align: middle;
+      }
+      .receipt-block {
+        background-color: #222;
+        border: 1px dashed #777;
+        padding: 1.5rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        max-width: 100%;
+        font-family: "Consolas", "Courier New", monospace;
+        font-size: 0.95em;
+        line-height: 1.4;
+        color: #ddd;
+        text-align: left;
+        border-radius: 8px;
+        white-space: pre-wrap;
+        word-break: break-all;
+      }
+      /* Specific styles for bold text */
+      strong {
+        font-weight: bold;
+      }
+      /* Styles for text alignment and spacing in footer */
+      .footer-section {
+        text-align: center;
+        font-size: 0.875rem; /* Equivalent to text-sm */
+        color: #9ca3af; /* Equivalent to text-gray-400 */
+        margin-top: 3rem; /* Equivalent to mt-12 */
+      }
+      .footer-section h2 {
+        font-size: 1.25rem; /* Equivalent to text-xl */
+        font-weight: 500; /* Equivalent to font-medium */
+        text-align: center;
+        margin-bottom: 0.5rem; /* Equivalent to mb-2 */
+      }
+      .footer-section p {
+        margin-bottom: 1rem; /* Equivalent to mb-4 */
+      }
+      .footer-section:last-child p {
+        margin-top: 2rem; /* Equivalent to mt-8 */
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <h1><span class="emoji">👨‍🍳</span> webchef.py</h1>
-      <p>
-        Webchef is a simple, lightweight HTTP server, baked in Python. It's
-        designed for easy preparation and serving, allowing you to quickly plate
-        static files from your local station.
+      <h1 class="text-center text-4xl sm:text-5xl font-bold mb-8">
+        <span class="emoji">🧑‍🍳</span> webchef.py
+      </h1>
+      <p class="text-lg text-center mb-8">
+        Welcome to <strong>webchef.py</strong> – a deliciously simple and
+        lightweight HTTP server written in Python! It's designed to help you
+        quickly serve local files from any directory, perfect for testing web
+        projects, sharing documents, or just getting a taste of how web servers
+        work.
+      </p>
+      <p class="text-lg text-center mb-8">
+        Think of it as your personal kitchen assistant, ready to whip up web
+        pages on demand!
       </p>
 
-      <h2>Signature Dishes (Key Features)</h2>
-      <ul>
-        <li><strong>Quick Prep:</strong> Just fire up the Python script!</li>
-        <li>
-          <strong>Clean Plates (URLs):</strong> Serves dishes without the
-          <code>.html</code> garnish.
-        </li>
-        <li>
-          <strong>Custom Seasoning:</strong> Configure the server directly in
-          the script and recipe file.
-        </li>
-        <li>
-          <strong>"Dish Not Found" Special (404 Page):</strong> Includes a
-          dedicated "Dish Not Found" presentation
-          (<code>webchef.404.html</code>).
-        </li>
-        <li>
-          <strong>Quiet Kitchen:</strong> Keeps console chatter to a minimum.
-        </li>
-      </ul>
+      <hr />
 
-      <h2>Recipe Adjustment</h2>
-      <p>
-        The python file includes the recipe, which allows you to customize the
-        server's ingredients and method, and you can find it somewhere near the
-        top of the file:
-      </p>
-      <pre><code>
-        {
-            "kitchen_address": "127.0.0.1",  // The address where the Chef listens for orders (all interfaces)
-            "oven_port": 8000,               // A different port for this custom setup
-            "menu_directory": ".",           // Serve dishes from this specific folder
-            "log_level": 30                  // Only show warnings and above (30 is logging.WARNING)
-        }
-        </code></pre>
+      <section id="features" class="mb-12">
+        <h2>✨ Features</h2>
+        <p>
+          This section highlights the core capabilities and convenient
+          functionalities that `webchef.py` offers, making it a versatile tool
+          for your local web serving needs.
+        </p>
+        <ul>
+          <li>
+            <span class="emoji">🚀</span> <strong>Instant Serving:</strong> Run
+            it in any folder, and it immediately serves all files and
+            subfolders.
+          </li>
+          <li>
+            <span class="emoji">📄📁</span>
+            <strong>Auto-Index Magic: </strong> No `index.html` in a directory?
+            No problem! `webchef.py` will automatically bake a default index
+            page listing all contents, even in subfolders.
+          </li>
+          <li>
+            <span class="emoji">🌙</span>
+            <strong>Dark Mode Delight:</strong> All auto-generated pages come
+            with a cozy dark grey theme.
+          </li>
+          <li>
+            <span class="emoji">👨‍👩‍👧‍👦</span>
+            <strong>Concurrency Ready:</strong> Handles multiple hungry clients
+            (up to ~20 devices) at once using threading.
+          </li>
+          <li>
+            <span class="emoji">✨</span>
+            <strong>Clean Kitchen Policy:</strong> All `index.html` files
+            generated by `webchef.py` are automatically cleaned up (deleted)
+            when the server stops.
+          </li>
+          <li>
+            <span class="emoji">🧾</span> <strong>Kitchen Receipt:</strong> Get
+            a detailed summary of your server's uptime and dishes served when
+            you close the kitchen.
+          </li>
+          <li>
+            <span class="emoji">🔥</span>
+            <strong>Error Handling:</strong> Serves custom, kitchen-themed error
+            pages for 404 (Not Found) and 403 (Forbidden) requests.
+          </li>
+        </ul>
+      </section>
 
-      <h2>"Dish Not Found" Presentation (<code>webchef.404.html</code>)</h2>
-      <p>
-        If an ingredient is missing, Webchef serves this special presentation.
-      </p>
+      <hr />
 
-      <h2>Serving Instructions</h2>
-      <ol>
-        <li>
-          Procure the latest batch of
-          <a href="https://github.com/mmmarco-de/webchef.py/releases/"
-            >webchef.py</a
-          >.
-        </li>
-        <li>Unpack it into your project's pantry.</li>
-        <li>
-          Adjust the recipe to your liking somewhere at the start of the file.
-        </li>
-        <li>Fire up the script: <code>python3 webchef.py</code></li>
-        <li>
-          Your dishes are ready at
-          <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> (or the
-          address and table number (port) specified in your recipe).
-        </li>
-      </ol>
+      <section id="getting-started" class="mb-12">
+        <h2>🚀 Getting Started: Setting Up Your Kitchen</h2>
+        <p>
+          This guide provides all the necessary steps to prepare your system and
+          get `webchef.py` installed, ensuring you have all the prerequisites in
+          place before you start serving content.
+        </p>
 
-      <p>
-        Enjoy plating your web creations with your friendly neighborhood
-        Webchef!
-      </p>
-      <p>
-        Prepared with passion by
-        <a href="https://mmmarco.de">Marco's Kitchen</a> | Check out the recipe
-        on <a href="https://github.com/mmmarco-de/webchef.py">GitHub</a>.
-      </p>
+        <h3>Prerequisites</h3>
+        <p>Make sure you have these ingredients before you start cooking:</p>
+        <ul>
+          <li>
+            <span class="emoji">🐍</span>
+            <strong>Python 3.6+:</strong> `webchef.py` runs on modern Python.
+            <ul>
+              <li>Check your version: <code>python3 --version</code></li>
+              <li>
+                Download Python:
+                <a
+                  href="https://www.python.org/downloads/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >https://www.python.org/downloads/</a
+                >
+                (Remember to check the option to "Add Python to PATH" during
+                installation on Windows!)
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>Installation</h3>
+        <p>Follow these steps to get `webchef.py` up and running:</p>
+        <ol>
+          <li>
+            <strong>Download `webchef.py`:</strong>
+            <p>
+              Grab the `webchef.py` file from this repository. You can clone the
+              repo or simply download the file directly.
+            </p>
+            <pre><code>git clone https://github.com/your-username/webchef.py.git # Replace with your actual repo URL
+cd webchef.py</code></pre>
+            <p>
+              Or, if you just have the code, simply save it into a file named
+              `webchef.py`.
+            </p>
+          </li>
+          <li>
+            <strong
+              >No extra `pip` installs needed for `webchef.py` itself!</strong
+            >
+            It uses only standard Python libraries.
+          </li>
+        </ol>
+      </section>
+
+      <hr />
+
+      <section id="how-to-use" class="mb-12">
+        <h2>👨‍🍳 How to Use webchef.py</h2>
+        <p>
+          This section provides a step-by-step guide on how to operate
+          `webchef.py`, from starting the server to understanding its automatic
+          indexing feature and gracefully shutting it down.
+        </p>
+
+        <ol>
+          <li>
+            <strong>Go to Your Serving Directory:</strong>
+            <p>
+              Open your terminal or command prompt and navigate to the folder
+              you want to serve. This is your "kitchen" for `webchef.py`.
+            </p>
+            <pre><code>cd /path/to/your/awesome/project</code></pre>
+          </li>
+          <li>
+            <strong>Start the Server:</strong>
+            <p>Run the `webchef.py` script:</p>
+            <pre><code>python3 webchef.py</code></pre>
+            <p>
+              (If `python3` doesn't work, try <code>python webchef.py</code>).
+            </p>
+            <p>You'll see a friendly message like:</p>
+            <pre><code>✨ webchef.py is cooking! Serving on http://127.0.0.1:8080
+🏡 Your kitchen (root directory): /path/to/your/awesome/project</code></pre>
+          </li>
+          <li>
+            <strong>Visit Your Web Page:</strong>
+            <p>
+              Open your favorite web browser and go to the address shown in the
+              terminal (e.g.,
+              <a
+                href="http://127.0.0.1:8080"
+                target="_blank"
+                rel="noopener noreferrer"
+                >http://127.0.0.1:8080</a
+              >).
+            </p>
+            <ul>
+              <li>
+                If you have an `index.html` in that folder, `webchef.py` will
+                serve it.
+              </li>
+              <li>
+                If not, it will automatically generate a lovely dark-themed
+                index page listing all files and subfolders!
+              </li>
+            </ul>
+          </li>
+        </ol>
+
+        <h3>📄 Automatic Index Pages (The Recipe Book Feature!)</h3>
+        <p>
+          `webchef.py` is smart! If you navigate to a directory (like
+          <a
+            href="http://172.0.0.1:8080/my_subfolder/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >http://127.0.0.1:8080/my_subfolder/</a
+          >) and there's no `index.html` inside, `webchef.py` will temporarily
+          create one for you. This page will list all the files and
+          subdirectories within that specific folder, making navigation a
+          breeze.
+        </p>
+        <p>
+          <strong>Important:</strong> These auto-generated `index.html` files
+          are temporary! They are automatically <strong>deleted</strong> when
+          you stop the `webchef.py` server. Your original files remain
+          untouched.
+        </p>
+
+        <h3>🛑 Stopping the Server (Closing the Kitchen)</h3>
+        <p>
+          To stop `webchef.py`, simply go back to the terminal where it's
+          running and press <code>Ctrl+C</code> (or <code>Cmd+C</code> on
+          macOS).
+        </p>
+        <p>
+          You'll then receive your <strong>webchef.py Receipt</strong>,
+          detailing how long your server was running and how many dishes
+          (requests) it served!
+        </p>
+      </section>
+
+      <hr />
+
+      <footer class="footer-section">
+        <section id="contributing">
+          <h2>🤝 Contributing</h2>
+          <p>
+            Got ideas for new recipes or want to help clean up the kitchen?
+            Contributions are welcome! Feel free to fork the repository, make
+            your changes, and submit a pull request.
+          </p>
+        </section>
+        <section id="license">
+          <h2>📜 License</h2>
+          <p>
+            This project is open source and available under the
+            <a href="LICENSE" target="_blank" rel="noopener noreferrer"
+              >Unlicense</a
+            >.
+          </p>
+        </section>
+        <p>Happy serving! 🥳</p>
+      </footer>
     </div>
   </body>
 </html>

@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dish Not Found :(</title>
+    <title>Error 404</title>
     <style>
       body {
-        background-color: #333; /* Dark background */
-        color: #eee; /* Light text */
-        font-family: sans-serif;
+        background-color: #333;
+        color: #eee;
+        font-family: "Inter", sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -17,10 +17,21 @@
       }
       .container {
         text-align: center;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        background-color: #444;
       }
       h1 {
         font-size: 2em;
         margin-bottom: 20px;
+        color: #ff6b6b;
+        border-bottom: 2px solid #ff6b6b;
+        padding-bottom: 10px;
+      }
+      p {
+        font-size: 1.1em;
+        margin-bottom: 15px;
       }
       .emoji {
         font-size: 3em;
@@ -29,14 +40,24 @@
       }
       a {
         color: #bbb;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <h1><span class="emoji">👨‍🍳</span> <strong>Dish Not Found :(</strong></h1>
-      <p>The Chef couldn't find what you ordered.</p>
-      <p><a href="/">Back to the Kitchen</a></p>
+      <h1>
+        <span class="emoji">🔥</span> Kitchen Fire! Error 404: Not Found
+        <span class="emoji">🔥</span>
+      </h1>
+      <p>
+        Looks like we couldn't find that recipe or something went wrong in the
+        kitchen.
+      </p>
+      <p>Please check your ingredients (URL) and try again!</p>
     </div>
   </body>
 </html>
